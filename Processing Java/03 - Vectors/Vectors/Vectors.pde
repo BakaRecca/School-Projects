@@ -1,63 +1,42 @@
-PVector winSize;
+PVector origin;
+float radius = 32f;
 
-PVector origin = new PVector (320f, 180f);
-float diameter = 64f;
-float radius;
-
-float magnitude;
-PVector direction;
 PVector velocity = new PVector (0f, 0f);
 
-boolean mousePressedOLD;
-boolean drawLine;
-
-void setup()
+void setup ()
 {
     size(640, 360);
-    winSize = new PVector (640f, 360f);
+    frameRate (30);
 
-    frameRate (5);
+    stroke (255);
+    strokeWeight (2);
+    fill (0);
 
-    radius = diameter * 0.5f;
+    origin = new PVector (width * 0.5f, height * 0.5f);
 }
 
-void draw()
+void draw ()
 {
-    background (128, 128, 128, 255);
-
-    CheckInput ();
+    background (0, 0, 0);
 
     origin.add (velocity);
 
     CheckOOB ();
 
-    ellipse (origin.x, origin.y, diameter, diameter);
+    ellipse (origin.x, origin.y, radius + radius, radius + radius);
 
-    if (drawLine)
+    if (mousePressed)
         line (mouseX, mouseY, origin.x, origin.y);
 }
 
-void CheckInput ()
-{
-    drawLine = false;
-
-    if (mousePressed && !mousePressedOLD)
-        OnMousePressed ();
-    else if (mousePressed && mousePressedOLD)
-        OnMouseHold ();
-
-    mousePressedOLD = mousePressed;
-}
-
-void OnMousePressed ()
+void mousePressed ()
 {
     origin = new PVector (mouseX, mouseY);
+    velocity = new PVector ();
 }
 
-void OnMouseHold ()
+void mouseReleased ()
 {
-    drawLine = true;
-
     CalcVelocity ();
 }
 
@@ -65,8 +44,8 @@ void CalcVelocity ()
 {
     PVector deltaPos = new PVector (mouseX - origin.x, mouseY - origin.y);
 
-    magnitude = deltaPos.mag ();
-    direction = deltaPos.normalize ();
+    float magnitude = deltaPos.mag ();
+    PVector direction = deltaPos.normalize ();
 
     velocity.mult (direction, (magnitude * 0.1f), velocity);
 
@@ -77,23 +56,23 @@ void CalcVelocity ()
 
 void CheckOOB ()
 {
-    if (origin.x >= (winSize.x - radius) && velocity.x > 0f)    // RIGHT
+    if (origin.x >= (width - radius) && velocity.x > 0f)    // RIGHT
     {
-        origin.x = winSize.x - radius;
+        origin.x = width - radius;
         velocity.x *= -1f;
     }
-    else if (origin.x <= radius && velocity.x < 0f)             // LEFT
+    else if (origin.x <= radius && velocity.x < 0f)         // LEFT
     {
         origin.x = radius;
         velocity.x *= -1f;
     }
 
-    if (origin.y >= (winSize.y - radius) && velocity.y > 0f)    // BOTTOM
+    if (origin.y >= (height - radius) && velocity.y > 0f)   // BOTTOM
     {
-        origin.y = winSize.y - radius;
+        origin.y = height - radius;
         velocity.y *= -1f;
     }
-    else if (origin.y <= radius && velocity.y < 0f)             // TOP
+    else if (origin.y <= radius && velocity.y < 0f)         // TOP
     {
         origin.y = radius;
         velocity.y *= -1f;
