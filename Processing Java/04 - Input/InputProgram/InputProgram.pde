@@ -1,9 +1,12 @@
+boolean left, right, up, down;
+
 PVector position;
 PVector input;
 PVector velocity;
 
-float speed = 30f;
-float maxSpeed = 10f;
+float speed = 60f;
+float maxSpeed = 240f;
+float friction = 0.8f;
 
 float radius;
 float diameter = 64f;
@@ -20,7 +23,7 @@ void setup ()
 {
     size (640, 360);
 
-    frameRate (30);
+    // frameRate (30);
 
     stroke (255);
     strokeWeight (2);
@@ -44,9 +47,11 @@ void draw ()
 
     time = currentTime;
 
+    GetInput ();
     CalcVelocity ();
 
-    position.add (velocity);
+    PVector move = new PVector (velocity.x, velocity.y);
+    position.add (move.mult (deltaTime));
 
     CheckBoundaries ();
 
@@ -61,16 +66,18 @@ void CalcVelocity ()
     direction.x = (velocity.x < 0f) ? -1f : 1f;
     direction.y = (velocity.y < 0f) ? -1f : 1f;
 
+    input.normalize ();
+
     if (input.x != 0f)
     {
-        velocity.x += input.x * speed * deltaTime;
+        velocity.x += input.x * speed;
 
         if (abs (velocity.x) > maxSpeed)
             velocity.x = direction.x * maxSpeed;
     }
     else
     {
-        velocity.x *= 0.7f;
+        velocity.x *= friction;
 
         if (abs (velocity.x) < 0.1f)
             velocity.x = 0f;
@@ -78,7 +85,7 @@ void CalcVelocity ()
 
     if (applyGravity)
     {
-        velocity.y += gravity * deltaTime;
+        velocity.y += gravity;
         if (velocity.y >= maxSpeed)
             velocity.y = maxSpeed;
         return;
@@ -86,14 +93,14 @@ void CalcVelocity ()
 
     if (input.y != 0f)
     {
-        velocity.y += input.y * speed * deltaTime;
+        velocity.y += input.y * speed;
 
         if (abs (velocity.y) > maxSpeed)
             velocity.y = direction.y * maxSpeed;
     }
     else
     {
-        velocity.y *= 0.7f;
+        velocity.y *= friction;
 
         if (abs (velocity.y) < 0.1f)
             velocity.y = 0f;
@@ -110,20 +117,38 @@ void CheckBoundaries ()
     if (position.y - radius < 0f)
         position.y = radius;
     else if (position.y + radius > height)
+    {
         position.y = height - radius;
+
+        if (applyGravity)
+            velocity.y *= -friction;
+    }
+}
+
+void GetInput ()
+{
+    input = new PVector (0f, 0f);
+
+    input.x += (left) ? -1f : 0f;
+    input.x += (right) ? 1f : 0f;
+
+    input.y += (up) ? -1f : 0f;
+    input.y += (down) ? 1f : 0f;
 }
 
 void keyPressed ()
 {
     if (keyCode == LEFT || key == 'a')
-        input.x = -1f;
-    else if (keyCode == RIGHT || key == 'd')
-        input.x = 1f;
+        left = true;
+
+    if (keyCode == RIGHT || key == 'd')
+        right = true;
 
     if (keyCode == UP || key == 'w')
-        input.y = -1f;
-    else if (keyCode == DOWN || key == 's')
-        input.y = 1f;
+        up = true;
+
+    if (keyCode == DOWN || key == 's')
+        down = true;
 
     if (key == 'g' && !gravityButtonPressed)
     {
@@ -137,11 +162,17 @@ void keyPressed ()
 
 void keyReleased ()
 {
-    if (keyCode == LEFT || key == 'a' || keyCode == RIGHT || key == 'd')
-        input.x = 0f;
-    
-    if (keyCode == UP || key == 'w' || keyCode == DOWN || key == 's')
-        input.y = 0f;
+    if (keyCode == LEFT || key == 'a')
+        left = false;
+
+    if (keyCode == RIGHT || key == 'd')
+        right = false;
+
+    if (keyCode == UP || key == 'w')
+        up = false;
+
+    if (keyCode == DOWN || key == 's')
+        down = false;
 
     if (key == 'g')
         gravityButtonPressed = false;
