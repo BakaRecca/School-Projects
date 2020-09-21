@@ -23,7 +23,7 @@ void setup ()
 {
     size (640, 360);
 
-    // frameRate (30);
+    frameRate (100);
 
     stroke (255);
     strokeWeight (2);
