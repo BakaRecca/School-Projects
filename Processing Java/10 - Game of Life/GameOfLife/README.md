@@ -1,3 +1,3 @@
-# GAME
+# Game of Life [BakaRecca]
 
-[What is this](screenshot.png)
+![ScreenShot](screenshot.png)
