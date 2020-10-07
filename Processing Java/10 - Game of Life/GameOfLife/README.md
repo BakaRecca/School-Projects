@@ -1,3 +1,3 @@
 # GAME
 
-[screenshot.png]
+[What is this](screenshot.png)
