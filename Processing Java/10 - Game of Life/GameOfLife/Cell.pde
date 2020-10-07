@@ -9,7 +9,7 @@ public class Cell
     private int size;
 
     private int counter;
-    private final int maxCounter = 4;
+    private final int maxCounter = 16;
 
     Cell (int x, int y, int size, boolean isAlive)
     {
@@ -19,7 +19,7 @@ public class Cell
         this.y = y;
         this.size = size;
 
-        this.counter = 0;
+        this.counter = maxCounter;
 
         this.name = "Cell[" + y + "][" + x + "]";
     }
