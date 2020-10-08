@@ -28,6 +28,7 @@ public class CellManager
         aliveList.shuffle ();
 
         grid = new Cell[mapHeight][mapWidth];
+        gridBuffer = new Cell[mapHeight][mapWidth];
 
         for (int y = 0; y < mapHeight; y++)
         {
@@ -47,7 +48,7 @@ public class CellManager
 
         int cellsAlive = 0;
 
-        gridBuffer = grid;
+        arrayCopy (grid, gridBuffer);
             
         for (int y = 0; y < grid.length; y++)
         {
@@ -57,7 +58,7 @@ public class CellManager
             }
         }
 
-        grid = gridBuffer;
+        arrayCopy (gridBuffer, grid);
     }
 
     public void Draw ()
