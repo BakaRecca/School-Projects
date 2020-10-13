@@ -14,6 +14,7 @@ public class CellManager
 
         int mapWidth = floor (width / cellSize);
         int mapHeight = floor (height / cellSize);
+
         int totalCells = mapHeight * mapWidth;
 
         IntList aliveList = new IntList ();
@@ -37,6 +38,7 @@ public class CellManager
                 boolean isAlive = (aliveList.get (y * mapHeight + x) == 1) ? true : false;
                 Cell cell = new Cell (x, y, cellSize, isAlive);
                 grid[y][x] = cell;
+                gridBuffer[y][x] = new Cell ();
             }
         }
     }
@@ -48,17 +50,17 @@ public class CellManager
 
         int cellsAlive = 0;
 
-        arrayCopy (grid, gridBuffer);
+        CopyArray (grid, gridBuffer);
             
         for (int y = 0; y < grid.length; y++)
         {
             for (int x = 0; x < grid[y].length; x++)
             {
-                gridBuffer[y][x].SetAlive (IsAliveAt (y, x));
+                gridBuffer[y][x].SetAlive (IsAliveAt (y, x), false);
             }
         }
 
-        arrayCopy (gridBuffer, grid);
+        CopyArray (gridBuffer, grid);
     }
 
     public void Draw ()
@@ -98,10 +100,10 @@ public class CellManager
         if (neighbourCount < 2)
             return false;
 
-        if (!grid[y][x].IsAlive () && neighbourCount != 3)
-            return false;
+        if (neighbourCount == 3)
+            return true;
 
-        return true;
+        return grid[y][x].IsAlive ();
     }
 
     private boolean HasNeighbour (int y, int x)
@@ -110,5 +112,16 @@ public class CellManager
             return false;
 
         return grid[y][x].IsAlive ();
+    }
+
+    private void CopyArray (Cell[][] from, Cell[][] to)
+    {
+        for (int y = 0; y < from.length; y++)
+        {
+            for (int x = 0; x < from[y].length; x++)
+            {
+                to[y][x].Copy (from[y][x]);
+            }
+        }
     }
 }

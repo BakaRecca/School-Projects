@@ -9,6 +9,7 @@ boolean plusKeyDown = false;
 boolean minusKeyDown = false;
 
 boolean sKeyDown = false;
+boolean nKeyDown = false;
 
 void keyPressed ()
 {
@@ -55,6 +56,12 @@ void keyPressed ()
         saveFrame("screenshot.png");
         sKeyDown = true;
     }
+
+    if (key == 'n' && !nKeyDown)
+    {
+        gameManager.FrameAdvance ();
+        nKeyDown = true;
+    }
 }
 
 void keyReleased ()
@@ -82,4 +89,7 @@ void keyReleased ()
 
     if (key == 's' && sKeyDown)
         sKeyDown = false;
+
+    if (key == 'n' && nKeyDown)
+        nKeyDown = false;
 }

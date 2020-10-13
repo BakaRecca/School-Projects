@@ -11,6 +11,18 @@ public class Cell
     private int counter;
     private final int maxCounter = 16;
 
+    Cell ()
+    {
+        this.isAlive = false;
+
+        this.x = 0;
+        this.y = 0;
+        this.size = 8;
+
+        this.counter = 0;
+        this.name = "EmptyCell[" + y + "][" + x + "]";
+    }
+
     Cell (int x, int y, int size, boolean isAlive)
     {
         this.isAlive = isAlive;
@@ -19,7 +31,7 @@ public class Cell
         this.y = y;
         this.size = size;
 
-        this.counter = maxCounter;
+        this.counter = (isAlive) ? 0 : maxCounter;
 
         this.name = "Cell[" + y + "][" + x + "]";
     }
@@ -38,6 +50,8 @@ public class Cell
         int b = (isAlive) ? amount * counter - 1 : 0;
 
         fill (r, g, b);
+        // color c = (isAlive) ? color (255) : color (0);
+        // fill (c);
 
         rectMode (CORNER);
         rect (x * size * scale, y * size * scale, size * scale, size * scale);
@@ -48,7 +62,7 @@ public class Cell
         return isAlive;
     }
 
-    public void SetAlive (boolean isAlive)
+    public void SetAlive (boolean isAlive, boolean copy)
     {
         counter = (this.isAlive == isAlive) ? constrain (++counter, 0, maxCounter) : 0;
 
@@ -58,6 +72,21 @@ public class Cell
     public void SetName (String name)
     {
         this.name = name;
+    }
+
+    public int X ()
+    {
+        return this.x;
+    }
+
+    public int Y ()
+    {
+        return this.y;
+    }
+
+    public int Counter ()
+    {
+        return this.counter;
     }
 
     public void Print ()
@@ -78,5 +107,14 @@ public class Cell
 
         if (size)
             println ("Size: " + this.size);
+    }
+
+    public void Copy (Cell cell)
+    {
+        this.x = cell.X ();
+        this.y = cell.Y ();
+
+        this.isAlive = cell.IsAlive ();
+        this.counter = cell.Counter ();
     }
 }

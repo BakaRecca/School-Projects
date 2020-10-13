@@ -7,6 +7,7 @@ void settings ()
 
 void setup ()
 {
+    frameRate (8);
     InitGame ();
 }
 

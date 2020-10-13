@@ -4,6 +4,7 @@ public class GameManager
 
     int scale;
 
+    boolean useTimers = true;
     float updateTimer;
     float updateTime;
 
@@ -36,6 +37,14 @@ public class GameManager
         cellManager.Draw ();
     }
 
+    public void FrameAdvance ()
+    {
+        if (useTimers)
+            return;
+
+        cellManager.Update ();
+    }
+
     public void SetScale (int scale)
     {
         this.scale = scale;
@@ -52,6 +61,9 @@ public class GameManager
 
     private void UpdateTimers ()
     {
+        if (!useTimers)
+            return;
+
         updateTimer -= deltaTime;
 
         if (updateTimer <= 0f)
