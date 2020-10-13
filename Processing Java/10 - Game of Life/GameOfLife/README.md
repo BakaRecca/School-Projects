@@ -1,7 +1,8 @@
 # Game of Life [BakaRecca]
 
-## BLACK <- RED
+## RED -> BLACK
 ### DEAD
+
 
 ## GREEN -> CYAN
 ### ALIVE
