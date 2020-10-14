@@ -1,18 +1,28 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Rigidbody2D rBody;
+    private BoxCollider2D boxCol;
+    
+    [SerializeField]
+    private ControllerType controllerType;
+
+    [SerializeField]
+    private float speed = 60f;
+
+    private void Awake ()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    enum ControllerType
     {
-        
+        Translate,
+        AddForce,
+        Velocity
     }
 }
