@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: 7a9d9be1042d44245a7a8d91ae35df05
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7820422326765245983
+    second: Hans_Fall_01
+  - first:
+      213: -7899897803767902726
+    second: Hans_Hurt_01
+  - first:
+      213: -294483835698143834
+    second: Hans_Idle_01
+  - first:
+      213: 1699972491546163588
+    second: Hans_Jump-Max-Height_01
+  - first:
+      213: 2428001532272276621
+    second: Hans_Jump-Up_01
+  - first:
+      213: -6198728477285241256
+    second: Hans_Land_01
+  - first:
+      213: 8747620984884168951
+    second: Hans_Run_01
+  - first:
+      213: -3816111878065033876
+    second: Hans_Run_02
+  - first:
+      213: 1491231960791300593
+    second: Hans_Run_03
+  - first:
+      213: 6038030873671391978
+    second: Hans_Run_04
+  - first:
+      213: -9202804768772984700
+    second: Hans_Run_05
+  - first:
+      213: -5988420311357421626
+    second: Hans_Run_06
+  - first:
+      213: -6571710166529462498
+    second: mario_idle-01
+  - first:
+      213: -3247871559953162277
+    second: Player_16x16_01
+  - first:
+      213: 1152582706652693205
+    second: White-Pixel_1x1
+  - first:
+      213: 5153338259693126039
+    second: Mario_idle-01
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hans_Fall_01
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 211
+        width: 29
+        height: 44
+      alignment: 9
+      pivot: {x: 0.4827586, y: 0.022727273}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f16506cfba8b78c60800000000000000
+      internalID: 7820422326765245983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hans_Hurt_01
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 170
+        width: 28
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5714286, y: 0.024390243}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afd868c8dcced5290800000000000000
+      internalID: -7899897803767902726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hans_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 105
+        width: 25
+        height: 41
+      alignment: 9
+      pivot: {x: 0.6, y: 0.024390243}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ad1e1df288c9ebf0800000000000000
+      internalID: -294483835698143834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hans_Jump-Max-Height_01
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 213
+        width: 28
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5, y: 0.023809524}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4897b8669f3879710800000000000000
+      internalID: 1699972491546163588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hans_Jump-Up_01
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 168
+        width: 28
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.024390243}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d84713d878ef1b120800000000000000
+      internalID: 2428001532272276621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hans_Land_01
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 148
+        width: 26
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.025}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85ea05cca41b9f9a0800000000000000
+      internalID: -6198728477285241256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hans_Run_01
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 124
+        width: 25
+        height: 42
+      alignment: 9
+      pivot: {x: 0.56, y: 0.023809524}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f806c950fac56970800000000000000
+      internalID: 8747620984884168951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hans_Run_02
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 85
+        width: 25
+        height: 41
+      alignment: 9
+      pivot: {x: 0.56, y: 0.024390243}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6de8cc27727a0bc0800000000000000
+      internalID: -3816111878065033876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hans_Run_03
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 64
+        width: 25
+        height: 39
+      alignment: 9
+      pivot: {x: 0.56, y: -0.025641026}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f9bca4419be1b410800000000000000
+      internalID: 1491231960791300593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hans_Run_04
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 190
+        width: 42
+        height: 65
+      alignment: 9
+      pivot: {x: 0.4047619, y: 0.35384616}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aea5608b6156bc350800000000000000
+      internalID: 6038030873671391978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hans_Run_05
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 81
+        width: 25
+        height: 41
+      alignment: 9
+      pivot: {x: 0.56, y: 0.024390243}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 480f30442d1194080800000000000000
+      internalID: -9202804768772984700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hans_Run_06
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 128
+        width: 26
+        height: 40
+      alignment: 9
+      pivot: {x: 0.53846157, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c78ecf647bd4eca0800000000000000
+      internalID: -5988420311357421626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mario_idle-01
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 222
+        width: 20
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5, y: 0.030303031}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7914078f7d5548740800000000000000
+      internalID: 5153338259693126039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_16x16_01
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 204
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdfd5e0360e3de2d0800000000000000
+      internalID: -3247871559953162277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: White-Pixel_1x1
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 219
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d2ca447ddbceff00800000000000000
+      internalID: 1152582706652693205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
