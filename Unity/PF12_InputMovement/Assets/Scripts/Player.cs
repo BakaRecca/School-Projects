@@ -10,9 +10,14 @@ public class Player : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
+    [Header("Audio")]
     [SerializeField] private AudioClip[] audioClips;
 
-    private bool inAir;
+    [Header("Properties")]
+    [SerializeField] private bool inAir;
+
+    [SerializeField] private int jumpCounter;
+    private const int jumpBufferMax = 8;
 
     private void Awake()
     {
@@ -31,9 +36,21 @@ public class Player : MonoBehaviour
     
     private void FixedUpdate()
     {
-        // controller.CalculateVelocity();
-        // controller.Move();
-        
+        if (jumpCounter > 0)
+        {
+            jumpCounter--;
+            
+            if (controller.Jump(true))
+            {
+                AudioManager.instance.PlaySFX(audioClips[(int) SFXClip.Jump]);
+                jumpCounter = 0;
+            }
+        }
+        else if (jumpCounter < 0)
+            controller.Jump(false);
+
+        controller.CalculateVelocity();
+        controller.Move();
     }
 
     private void CheckInput()
@@ -42,9 +59,15 @@ public class Player : MonoBehaviour
         controller.SetDirection(inputController.GetDirectionInput());
         // controller.Jump(Input.GetButton("Jump"));
         if (Input.GetButtonDown("Jump"))
-            controller.Jump(true);
+        {
+            jumpCounter = jumpBufferMax;
+            
+            // if (controller.Jump(true))
+            //     AudioManager.instance.PlaySFX(audioClips[(int) SFXClip.Jump]);
+        }
         else if (!Input.GetButton("Jump"))
-            controller.Jump(false);
+            jumpCounter = -1;
+        //     controller.Jump(false);
     }
 
     private void UpdateAnimations()

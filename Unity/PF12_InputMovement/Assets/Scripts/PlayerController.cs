@@ -30,25 +30,28 @@ public class PlayerController : Motor
     private void FixedUpdate()
     {
         // MOVE
-        CalculateVelocity();
-        Move();
+        // CalculateVelocity();
+        // Move();
     }
 
-    public void Jump(bool pressed)
+    public bool Jump(bool pressed)
     {
         if (pressed)
         {
             if (!collisionInfo.below)
-                return;
+                return false;
 
             currentVelocity.y = jumpPower;
             collisionInfo.below = false;
+            return true;
         }
         else
         {
             if (currentVelocity.y > jumpMinHeight)
                 currentVelocity.y = jumpMinHeight;
         }
+
+        return false;
     }
 
     public void CalculateVelocity()

@@ -26,7 +26,8 @@ public class Motor : CollisionController
         rbody = GetComponent<Rigidbody2D>();
     }
 
-    protected void Move()
+    // protected void Move()
+    public void Move()
     {
         if (velocity == Vector2.zero)
             return;
