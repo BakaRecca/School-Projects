@@ -8,11 +8,16 @@ public class Motor : CollisionController
 {
     private Rigidbody2D rbody;
 
+    // [SerializeField] 
     protected Vector2 direction;
     [SerializeField] protected Vector2 velocity;
     
+    [Header("Properties")]
     [Range(30, 300)]
     [SerializeField] protected float speed;
+
+    [Range(10, 60)]
+    [SerializeField] protected float gravity;
 
     protected override void Awake()
     {
@@ -23,7 +28,9 @@ public class Motor : CollisionController
 
     protected void Move()
     {
-        CalculateVelocity();
+        if (velocity == Vector2.zero)
+            return;
+        
         UpdateRaycastOrigins();
         collisionInfo.Reset();
 
@@ -37,8 +44,8 @@ public class Motor : CollisionController
         transform.Translate(new Vector3(velocity.x, velocity.y, 0f));
     }
 
-    private void CalculateVelocity()
+    public void SetDirection(Vector2 direction)
     {
-        velocity = direction * (speed * Time.fixedDeltaTime);
+        this.direction = direction;
     }
 }

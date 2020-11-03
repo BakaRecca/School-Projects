@@ -181,18 +181,18 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">../../../Graphics/Sprites/Hans_Fall_01.png</key>
-            <key type="filename">../../../Graphics/Sprites/Hans_Hurt_01.png</key>
-            <key type="filename">../../../Graphics/Sprites/Hans_Idle_01.png</key>
-            <key type="filename">../../../Graphics/Sprites/Hans_Jump-Max-Height_01.png</key>
-            <key type="filename">../../../Graphics/Sprites/Hans_Jump-Up_01.png</key>
-            <key type="filename">../../../Graphics/Sprites/Hans_Land_01.png</key>
-            <key type="filename">../../../Graphics/Sprites/Hans_Run_01.png</key>
-            <key type="filename">../../../Graphics/Sprites/Hans_Run_02.png</key>
-            <key type="filename">../../../Graphics/Sprites/Hans_Run_03.png</key>
-            <key type="filename">../../../Graphics/Sprites/Hans_Run_04.png</key>
-            <key type="filename">../../../Graphics/Sprites/Hans_Run_05.png</key>
-            <key type="filename">../../../Graphics/Sprites/Hans_Run_06.png</key>
+            <key type="filename">../../../Graphics/Sprites/Hans - Slime World/Hans_Fall_01.png</key>
+            <key type="filename">../../../Graphics/Sprites/Hans - Slime World/Hans_Hurt_01.png</key>
+            <key type="filename">../../../Graphics/Sprites/Hans - Slime World/Hans_Idle_01.png</key>
+            <key type="filename">../../../Graphics/Sprites/Hans - Slime World/Hans_Jump-Max-Height_01.png</key>
+            <key type="filename">../../../Graphics/Sprites/Hans - Slime World/Hans_Jump-Up_01.png</key>
+            <key type="filename">../../../Graphics/Sprites/Hans - Slime World/Hans_Land_01.png</key>
+            <key type="filename">../../../Graphics/Sprites/Hans - Slime World/Hans_Run_01.png</key>
+            <key type="filename">../../../Graphics/Sprites/Hans - Slime World/Hans_Run_02.png</key>
+            <key type="filename">../../../Graphics/Sprites/Hans - Slime World/Hans_Run_03.png</key>
+            <key type="filename">../../../Graphics/Sprites/Hans - Slime World/Hans_Run_04.png</key>
+            <key type="filename">../../../Graphics/Sprites/Hans - Slime World/Hans_Run_05.png</key>
+            <key type="filename">../../../Graphics/Sprites/Hans - Slime World/Hans_Run_06.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -222,6 +222,45 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Bullet-Level-0-Hit_01.png</key>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Bullet-Level-0-Hit_02.png</key>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Bullet-Level-0-Hit_03.png</key>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Bullet-Level-0-Hit_04.png</key>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Bullet-Level-0_01.png</key>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Climb-Ladder-Shoot_01.png</key>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Climb-Ladder-Up_01.png</key>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Climb-Ladder_01.png</key>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Climb-Ladder_02.png</key>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Idle-Shoot_01.png</key>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Idle_01.png</key>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Idle_02.png</key>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Jump-Shoot_01.png</key>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Jump_01.png</key>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Run-Shoot_01.png</key>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Run-Shoot_02.png</key>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Run-Shoot_03.png</key>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Run_01.png</key>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Run_02.png</key>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Run_03.png</key>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Run_04.png</key>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Warp_01.png</key>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Warp_02.png</key>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Mega-Man_Warp_03.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>24,24,48,48</rect>
+                <key>scale9Paddings</key>
+                <rect>24,24,48,48</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../Graphics/Sprites/Mega Man/Portrait_Mega-Man_01.png</key>
             <key type="filename">../../../Graphics/Sprites/Player_16x16_01.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>

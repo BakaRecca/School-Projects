@@ -7,12 +7,15 @@ using UnityEngine.WSA;
 
 public class CollisionController : RaycastController
 {
+    [Header("Collision")]
     [SerializeField] protected CollisionInfo collisionInfo;
 
     protected void HorizontalRaycastCheck(ref Vector2 velocity)
     {
         Vector2 direction = Vector2.right * Mathf.Sign(velocity.x);
         float distance = Mathf.Abs(velocity.x) + SkinWidth;
+
+        boxCollider.enabled = false;
 
         for (int i = 0; i < horizontalRayCount; i++)
         {
@@ -40,12 +43,16 @@ public class CollisionController : RaycastController
                 collisionInfo.right = (int)direction.x == 1;
             }
         }
+        
+        boxCollider.enabled = true;
     }
     
     protected void VerticalRaycastCheck(ref Vector2 velocity)
     {
         Vector2 direction = Vector2.up * Mathf.Sign(velocity.y);
         float distance = Mathf.Abs(velocity.y) + SkinWidth;
+        
+        boxCollider.enabled = false;
 
         for (int i = 0; i < verticalRayCount; i++)
         {
@@ -73,6 +80,8 @@ public class CollisionController : RaycastController
                 collisionInfo.above = (int)direction.y == 1;
             }
         }
+        
+        boxCollider.enabled = true;
     }
     
     

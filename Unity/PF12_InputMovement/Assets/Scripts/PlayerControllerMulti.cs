@@ -5,6 +5,8 @@ using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
+#pragma warning disable 649
+
 public class PlayerControllerMulti : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;

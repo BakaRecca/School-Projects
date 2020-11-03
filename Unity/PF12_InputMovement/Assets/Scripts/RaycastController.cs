@@ -10,6 +10,7 @@ public class RaycastController : MonoBehaviour
 {
     protected BoxCollider2D boxCollider;
     
+    [Header("Collision")]
     [SerializeField] protected LayerMask collisionMask;
 
     protected const float SkinWidth = 0.01f;
@@ -28,9 +29,7 @@ public class RaycastController : MonoBehaviour
 
         horizontalRayCount = Mathf.CeilToInt(boxCollider.size.y / TileSize) + 1;
         verticalRayCount = Mathf.CeilToInt(boxCollider.size.x / TileSize) + 1;
-        
-        Debug.Log($"boxSize: {boxCollider.size}\nhor: {horizontalRayCount} - ver: {verticalRayCount}");
-        
+
         CalculateRaySpacing();
     }
 
@@ -55,8 +54,6 @@ public class RaycastController : MonoBehaviour
 
         horizontalRaySpacing = bounds.size.y / (horizontalRayCount - 1);
         verticalRaySpacing = bounds.size.x / (verticalRayCount - 1);
-        
-        Debug.Log($"bounds: {bounds}\nhorSpac: {horizontalRaySpacing} - verSpac: {verticalRaySpacing}");
     }
 
     protected struct RaycastOrigins
