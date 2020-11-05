@@ -1,7 +1,9 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+#pragma warning disable 649
 
 public class Player : MonoBehaviour
 {
@@ -40,9 +42,12 @@ public class Player : MonoBehaviour
         {
             jumpCounter--;
             
+            Debug.Log($"jumpCounter: {jumpCounter}");
+            
             if (controller.Jump(true))
             {
                 AudioManager.instance.PlaySFX(audioClips[(int) SFXClip.Jump]);
+                Debug.Log($"JUMPED! - jumpCounter: {jumpCounter}");
                 jumpCounter = 0;
             }
         }
@@ -72,7 +77,7 @@ public class Player : MonoBehaviour
 
     private void UpdateAnimations()
     {
-        animator.SetFloat("SpeedX", Math.Abs(controller.currentVelocity.x));
+        animator.SetFloat("SpeedX", Math.Abs(controller.Velocity.x));
         animator.SetBool("In Air", controller.IsInAir());
 
         if (inAir && !controller.IsInAir())
@@ -83,11 +88,11 @@ public class Player : MonoBehaviour
 
         inAir = controller.IsInAir();
 
-        if (controller.currentVelocity.x != 0f)
-            spriteRenderer.flipX = controller.currentVelocity.x < 0f;
+        if (controller.Velocity.x != 0f)
+            spriteRenderer.flipX = controller.Velocity.x < 0f;
     }
-
-    public enum SFXClip : int
+    
+    private enum SFXClip : int
     {
         Jump
     }

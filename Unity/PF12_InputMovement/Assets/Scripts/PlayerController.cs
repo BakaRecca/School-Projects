@@ -11,9 +11,6 @@ public class PlayerController : Motor
     [SerializeField] private int currentMoveSpeed;
     [SerializeField] private float jumpPower;
     private float jumpMinHeight = 120f;
-    
-    // [HideInInspector]
-    public Vector2 currentVelocity;
 
     [Range(4, 32)]
     [SerializeField] private int moveSpeedX;
@@ -41,14 +38,14 @@ public class PlayerController : Motor
             if (!collisionInfo.below)
                 return false;
 
-            currentVelocity.y = jumpPower;
+            velocity.y = jumpPower;
             collisionInfo.below = false;
             return true;
         }
         else
         {
-            if (currentVelocity.y > jumpMinHeight)
-                currentVelocity.y = jumpMinHeight;
+            if (velocity.y > jumpMinHeight)
+                velocity.y = jumpMinHeight;
         }
 
         return false;
@@ -58,21 +55,19 @@ public class PlayerController : Motor
     {
         CalculateVelocityX();
         CalculateVelocityY();
-
-        velocity = currentVelocity * Time.deltaTime;
     }
 
     private void CalculateVelocityX()
     {
-        currentVelocity.x = direction.x * ((moveSpeedX * 32) / 256f) * FPS;
+        velocity.x = direction.x * ((moveSpeedX * 32) / 256f) * FPS;
     }
 
     private void CalculateVelocityY()
     {
         if (collisionInfo.below || collisionInfo.above)
-            currentVelocity.y = 0f;
+            velocity.y = 0f;
 
-        currentVelocity.y -= gravity;
+        velocity.y -= gravity / Time.deltaTime;
     }
 
     public bool IsInAir()

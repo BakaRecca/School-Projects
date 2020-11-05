@@ -11,12 +11,19 @@ public class Motor : CollisionController
     // [SerializeField] 
     protected Vector2 direction;
     [SerializeField] protected Vector2 velocity;
+    public Vector2 Velocity
+    {
+        get
+        {
+            return velocity;
+        }
+    }
     
     [Header("Properties")]
-    [Range(30, 300)]
+    [Range(30, 240)]
     [SerializeField] protected float speed;
 
-    [Range(10, 60)]
+    [Range(10, 20)]
     [SerializeField] protected float gravity;
 
     protected override void Awake()
@@ -41,8 +48,7 @@ public class Motor : CollisionController
         if (velocity.y != 0f)
             VerticalRaycastCheck(ref velocity);
         
-        // this.velocity = velocity;
-        transform.Translate(new Vector3(velocity.x, velocity.y, 0f));
+        transform.Translate(new Vector3(velocity.x, velocity.y, 0f) * Time.deltaTime);
     }
 
     public void SetDirection(Vector2 direction)
